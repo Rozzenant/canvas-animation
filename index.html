@@ -4,30 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(45deg, rgb(207, 202, 242), rgb(131, 95, 217));
-            height: 100vh;
-        }
-
-        #canvas {
-            border: 2px solid rgb(0, 0, 0);
-        }
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="wrapper">
-        <canvas id="canvas" width="720px" height="480px"></canvas>
+        <canvas id="canvas"></canvas>
     </div>
+    <script src="setting.js"></script>
+    <script src="primitives.js"></script>
+    <script src="actions.js"></script>
+    <script src="main-script.js"></script>
 </body>
 </html>
