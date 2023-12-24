@@ -163,9 +163,50 @@ class Circle {
 
 }
 
-// function isNum(num) {
-//     if (!isNaN(parseFloat(num, 10)) && isFinite(num))
-//         return true;
-//     else
-//         return false;
-// }
+class Player {
+    constructor(x, y, angle){
+        this._x = x;
+        this._y = y;
+        this._x_map = div(x, MAP_SCALE);
+        this._y_map = div(y, MAP_SCALE);
+        this._angle = angle
+        this._line_view = new Line(x, y,
+                              x + WIDTH * Math.cos(angle), y + WIDTH * Math.sin(angle));
+    }
+
+    set x(x){
+        this._x = x;
+    }
+
+    set y(y){
+        this._y = y;
+    }
+
+    set angle(angle){
+        this._angle = angle;
+    }
+
+    get x(){
+        return this._x;
+    }
+
+    get y(){
+        return this._y;
+    }
+
+    get angle(){
+        return this._angle;
+    }
+
+    render(){
+        this._x_map = div(this._x, MAP_SCALE);
+        this._y_map = div(this._y, MAP_SCALE);
+        this._line_view.start = [this._x_map, this._y_map];
+        this._line_view.end = [this._x_map + 20 * Math.cos(this._angle),
+                               this._y_map + 20 * Math.sin(this._angle)];
+        
+        drawLine(this._line_view);
+        drawCircle(this._x_map, this._y_map);
+        
+    }
+}

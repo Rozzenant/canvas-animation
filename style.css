@@ -12,6 +12,14 @@
     height: 100vh;
 }
 
+.tutorial {
+    position: absolute;
+    width: 20%;
+    top: 60px;
+    left: 955px;
+    color:yellow;
+}
+
 #canvas {
     border: 2px solid rgb(0, 0, 0);
 }
